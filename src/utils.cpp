@@ -135,12 +135,15 @@ std::string get_path(int num)
 {
     std::string str1 = "/sys/devices/system/cpu/cpufreq/policy" + std::to_string(num) + "/";
     std::string str2 = "/sys/devices/system/cpu/cpu" + std::to_string(num) + "/cpufreq/";
+    std::ifstream file(str1);
+    std::ifstream file2(str2);
 
-    if (dexists(str1))
+
+    if (file.good())
     {
         return str1;
     }
-    else if (dexists(str2))
+    else if (file2.good())
     {
         return str2;
     }
