@@ -73,12 +73,16 @@ if(BUILD_TESTS)
     add_executable(cpu_times      test/cpu_times.cpp)
     add_executable(swap_memory    test/swap_memory.cpp)
     add_executable(cpu_freq       test/cpu_freq.cpp)
+    add_executable(linux_cpp       demo/linux.cpp)
+
 
     target_link_libraries(virtual_memory ${PROJECT_NAME})
     target_link_libraries(cpu_count      ${PROJECT_NAME})
     target_link_libraries(swap_memory    ${PROJECT_NAME})
     target_link_libraries(cpu_times      ${PROJECT_NAME})
     target_link_libraries(cpu_freq       ${PROJECT_NAME})
+    target_link_libraries(linux_cpp       ${PROJECT_NAME})
+
 
     add_test("cpu_times"      cpu_times)
     add_test("virtual_memory" virtual_memory)
